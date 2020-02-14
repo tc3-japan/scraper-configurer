@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<script src="https://unpkg.com/split.js/dist/split.min.js"></script>
+	<script src="src-min/ace.js" type="text/javascript" charset="utf-8"></script>
+	<link rel="stylesheet" href="codemirror-5.51.0/doc/docs.css">
+
+	<link rel="stylesheet" href="codemirror-5.51.0/lib/codemirror.css">
+	<script src="codemirror-5.51.0/lib/codemirror.js"></script>
+	<script src="codemirror-5.51.0/addon/edit/matchbrackets.js"></script>
+	<script src="codemirror-5.51.0/mode/groovy/groovy.js"></script>
+	<style type="text/css" media="screen">
+		body {
+			overflow: hidden;
+		}
+
+		#editor {
+			margin: 0;
+			position: absolute;
+			top: 50px;
+			bottom: 0;
+			left: 0;
+			right: 0;
+		}
+
+		.b {
+			margin: 10px;
+			width: 100px;
+			font-size: inherit;
+		}
+
+		.p {
+			height: 100%;
+		}
+
+		#message {
+			padding: 10px;
+			font-size: inherit;
+		}
+
+		.split,
+		.gutter.gutter-horizontal {
+			float: left;
+			min-height: 50px;
+			border: 1px solid darkgrey;
+			height: 100%;
+		}
+
+		.gutter.gutter-horizontal {
+			cursor: ew-resize;
+			background-color: darkgrey;
+			height: 100%;
+		}
+	</style>
+</head>
+
+<body>
+
+	<div>
+		<button id="load" type="button" class="b">Load</button>
+		<button id="save" type="button" class="b">Save</button>
+		<button id="test" type="button" class="b">Test</button>
+	</div>
+
+	<div class="p">
+
+		<div class="pl split">
+			<textarea id="code" name="code" style="display: none;">
+//Pattern for groovy script
+def p = ~/.*\.groovy/
+new File( 'd:\\scripts' ).eachFileMatch(p) {f -&gt;
+  // imports list
+  def imports = []
+  f.eachLine {
+	// condition to detect an import instruction
+	ln -&gt; if ( ln =~ '^import .*' ) {
+	  imports &lt;&lt; "${ln - 'import '}"
+	}
+  }
+  // print thmen
+  if ( ! imports.empty ) {
+	println f
+	imports.each{ println "   $it" }
+  }
+}
+
+/* Coin changer demo code from http://groovy.codehaus.org */
+
+enum UsCoin {
+  quarter(25), dime(10), nickel(5), penny(1)
+  UsCoin(v) { value = v }
+  final value
+}
+
+enum OzzieCoin {
+  fifty(50), twenty(20), ten(10), five(5)
+  OzzieCoin(v) { value = v }
+  final value
+}
+
+def plural(word, count) {
+  if (count == 1) return word
+  word[-1] == 'y' ? word[0..-2] + "ies" : word + "s"
+}
+
+def change(currency, amount) {
+  currency.values().inject([]){ list, coin -&gt;
+	 int count = amount / coin.value
+	 amount = amount % coin.value
+	 list += "$count ${plural(coin.toString(), count)}"
+  }
+}
+				</textarea>
+
+		</div>
+
+		<div class="pr split">
+			<div id="message">Show message here</div>
+		</div>
+	</div>
+
+	<script src="panel.js" type="text/javascript" charset="utf-8"></script>
+</body>
+
+</html>
