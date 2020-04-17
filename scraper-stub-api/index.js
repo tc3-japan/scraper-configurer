@@ -1,42 +1,19 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const fs = require('fs');
 
 const app = express();
 app.use(bodyParser.raw({ type: 'application/octet-stream' }))
-app.use(bodyParser.text({ type: ['text/*', 'application/x-groovy'] }))
+app.use(bodyParser.text({ type: ['text/*', 'application/json'] }))
 
-const groovy = "\
-// set scraping page\n\
-setPage \"https://www.amazon.co.jp/gp/your-account/order-history?opt=ab&digitalOrders=1&unifiedOrders=1&returnTo=&orderFilter=\"\n\
-\n\
-// start to process purchase history\n\
-processPurchaseHistory() {\n\
-\n\
-	// scrape order dom node list\n\
-	orderList = scrapeDomList \"#ordersContainer > div.order\" // ordersBox\n\
-	// loop each order\n\
-	processOrders(orderList) { orderNode ->\n\
-		// scrape order details\n\
-		scrapeOrderNumber    orderNode, \"div.order-info > div > div > div > div:nth-of-type(2) > div:nth-of-type(1) > span:nth-of-type(2)\"             // orderNumber\n\
-		scrapeOrderDate      orderNode, \"div.order-info > div > div > div > div:nth-of-type(1) > div > div:nth-of-type(1) > div:nth-of-type(2) > span\" // orderDate\n\
-		scrapeTotalAmount    orderNode, \"div.order-info > div > div > div > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(2) > span\" // totalAmount\n\
-		scrapeDeliveryStatus orderNode, \"div.shipment > div > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(1)\"      // deliveryStatus\n\
-\n\
-		if (!isNew()) { return false; }\n\
-\n\
-		// scrape product dom node list\n\
-		productList = scrapeDomList \"div.shipment > div > div > div > div:nth-of-type(1) > div > div.a-fixed-left-grid\" // productsBox\n\
-		// loop each product\n\
-		processProducts(productList) { productNode ->\n\
-			// scrape product details\n\
-			scrapeProductCodeFromAnchor productNode, \"div > div:nth-of-type(2) > div:nth-of-type(1) > a\", \"\\\\/gp\\\\/product\\\\/([A-Z0-9]+)\\\\/\" // productAnchor, pattern\n\
-			scrapeProductNameFromAnchor productNode, \"div > div:nth-of-type(2) > div:nth-of-type(1) > a\"                                     // productAnchor\n\
-			scrapeProductQuantity       productNode, \"span.item-view-qty\"                                                                    // productQuantity\n\
-			scrapeUnitPrice             productNode, \"span.a-color-price\"                                                                    // unitPrice\n\
-			scrapeProductDistributor    productNode, \"span.a-color-secondary\"                                                                // productDistributor\n\
-		}\n\
-	}\n\
-}\n"
+//const amazon = fs.readFileSync('./purchase_history_amazon.json', 'utf8');
+//const rakuten = fs.readFileSync('./purchase_history_rakuten.json', 'utf8');
+//const yahoo = fs.readFileSync('./purchase_history_yahoo.json', 'utf8');
+const sites = {
+    amazon: fs.readFileSync('./purchase_history_amazon.json', 'utf8'),
+    rakuten: fs.readFileSync('./purchase_history_rakuten.json', 'utf8'),
+    yahoo: fs.readFileSync('./purchase_history_yahoo.json', 'utf8')
+};
 
 let allowCrossDomain = function(req, res, next) {
     res.header('Access-Control-Allow-Origin', "*");
@@ -47,7 +24,7 @@ let allowCrossDomain = function(req, res, next) {
 
 const check_params = function(req) {
 	var err = null;
-	if (req.params.site !== 'amazon') {
+	if (!(req.params.site in sites)) {
 		err = 'Unsupported site: ' + req.params.site
 	}
 	if (req.params.type !== 'purchase_history') {
@@ -65,8 +42,8 @@ app.get('/', (req, res) => {
 app.get('/scrapers/:site/:type', (req, res) => {
 		var err = check_params(req);
 		if (!err) {
-			res.writeHead(200, {'Content-Type': 'application/x-groovy' });
-			res.end(groovy);
+			res.writeHead(200, {'Content-Type': 'application/json' });
+			res.end(sites[req.params.site]);
 		} else {
 			res.status(400).send(err);
 		}
@@ -74,13 +51,14 @@ app.get('/scrapers/:site/:type', (req, res) => {
 
 app.put('/scrapers/:site/:type', (req, res) => {
 		var err = check_params(req),
-				body = String(req.body);
+			body = String(req.body);
 
 		console.log(body);
 
 		if (!body) {
 			err = 'Missing script body';
 		}
+
 		if (!err) {
 			res.send("Successfully Updated");
 		} else {

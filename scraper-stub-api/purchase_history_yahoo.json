@@ -1,0 +1,59 @@
+{
+    "url": "https://odhistory.shopping.yahoo.co.jp/cgi-bin/history-list?sc_i=shp_pc_my_MHD_order_history",
+    "purchase_order": {
+        "parent": "html > body > div:nth-of-type(1) > div > div:nth-of-type(2) > div > div:nth-of-type(1) > div > div:nth-of-type(1) > div:nth-of-type(2) > ul > li",
+        "order_number": {
+            "element": "div:nth-of-type(2) > ul > li > ul:nth-of-type(1) > li:nth-of-type(2) > dl > dd",
+            "full_path": false,
+            "attribute": "",
+            "regex": ""
+        },
+        "order_date": {
+            "element": "div:nth-of-type(1) > p:nth-of-type(1) > span",
+            "full_path": false,
+            "attribute": "",
+            "regex": ""
+        },
+        "purchase_product": {
+            "url_element": "div:nth-of-type(2) > ul > li > ul:nth-of-type(3) > li:nth-of-type(1) > a",
+            "parent": "html > body > div:nth-of-type(1) > div > div:nth-of-type(2) > div > div:nth-of-type(1) > div > div:nth-of-type(3) > div:nth-of-type(2) > ul > li",
+            "total_amount": {
+                "element": "html > body > div:nth-of-type(1) > div > div:nth-of-type(2) > div > div:nth-of-type(2) > div > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > ul > li.elSum > dl > dd",
+                "full_path": true,
+                "attribute": "",
+                "regex": ""
+            },
+            "product_code": {
+                "element": "div > ul > li:nth-of-type(2) > p > a",
+                "full_path": false,
+                "attribute": "href",
+                "regex": "https:\/\/.*pagekey=(.*)"
+            },
+            "product_name": {
+                "element": "div > dl > dd:nth-of-type(1) > a > span",
+                "full_path": false,
+                "attribute": "",
+                "regex": ""
+            },
+            "product_quantity": {
+                "element": "div > dl > dd > span:nth-of-type(2).elNum",
+                "full_path": false,
+                "attribute": "",
+                "regex": ""
+            },
+            "unit_price": {
+                "element": "div > dl > dd > span:nth-of-type(1).elPrice",
+                "full_path": false,
+                "attribute": "",
+                "regex": ""
+            },
+            "product_distributor": {
+                "element": "html > body > div:nth-of-type(1) > div > div:nth-of-type(2) > div > div:nth-of-type(1) > div > div > div:nth-of-type(2) > ul:nth-of-type(1) > li:nth-of-type(1) > a",
+                "full_path": true,
+                "attribute": "",
+                "regex": ""
+            }
+       }
+    },
+    "next_url_element": "html > body > div:nth-of-type(1) > div > div:nth-of-type(2) > div > div:nth-of-type(1) > div > div:nth-of-type(2) > div > ul > li:nth-of-type(2) > a"
+}
