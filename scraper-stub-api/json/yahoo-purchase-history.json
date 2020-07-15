@@ -7,13 +7,15 @@
             "element": "div:nth-of-type(2) > ul > li > ul:nth-of-type(1) > li:nth-of-type(2) > dl > dd",
             "full_path": false,
             "attribute": "",
-            "regex": ""
+            "regex": "",
+            "script": ""
         },
         "order_date": {
             "element": "div:nth-of-type(1) > p:nth-of-type(1) > span",
             "full_path": false,
             "attribute": "",
-            "regex": ""
+            "regex": "",
+            "script": ""
         },
         "purchase_product": {
             "url_element": "div:nth-of-type(2) > ul > li > ul:nth-of-type(3) > li:nth-of-type(1) > a",
@@ -22,37 +24,43 @@
                 "element": "html > body > div:nth-of-type(1) > div > div:nth-of-type(2) > div > div:nth-of-type(2) > div > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > ul > li.elSum > dl > dd",
                 "full_path": true,
                 "attribute": "",
-                "regex": ""
+                "regex": "",
+                "script": ""
             },
             "product_code": {
                 "element": "div > ul > li:nth-of-type(2) > p > a",
                 "full_path": false,
                 "attribute": "href",
-                "regex": "https:\/\/.*pagekey=(.*)"
+                "regex": "https:\/\/.*pagekey=(.*)",
+                "script": ""
             },
             "product_name": {
                 "element": "div > dl > dd:nth-of-type(1) > a > span",
                 "full_path": false,
                 "attribute": "",
-                "regex": ""
+                "regex": "",
+                "script": ""
             },
             "product_quantity": {
                 "element": "div > dl > dd > span:nth-of-type(2).elNum",
                 "full_path": false,
                 "attribute": "",
-                "regex": ""
+                "regex": "",
+                "script": ""
             },
             "unit_price": {
                 "element": "div > dl > dd > span:nth-of-type(1).elPrice",
                 "full_path": false,
                 "attribute": "",
-                "regex": ""
+                "regex": "",
+                "script": ""
             },
             "product_distributor": {
                 "element": "html > body > div:nth-of-type(1) > div > div:nth-of-type(2) > div > div:nth-of-type(1) > div > div > div:nth-of-type(2) > ul:nth-of-type(1) > li:nth-of-type(1) > a",
                 "full_path": true,
                 "attribute": "",
-                "regex": ""
+                "regex": "",
+                "script": ""
             }
        }
     },

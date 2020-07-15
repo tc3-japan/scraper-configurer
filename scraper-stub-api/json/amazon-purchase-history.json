@@ -7,25 +7,29 @@
             "element": "div:nth-of-type(1) > div > div > div > div:nth-of-type(2) > div:nth-of-type(1) > span:nth-of-type(2).a-color-secondary.value",
             "full_path": false,
             "attribute": "",
-            "regex": ""
+            "regex": "",
+            "script": ""
         },
         "order_date": {
             "element": "div:nth-of-type(1) > div > div > div > div:nth-of-type(1) > div > div:nth-of-type(1) > div:nth-of-type(2) > span.a-color-secondary.value",
             "full_path": false,
             "attribute": "",
-            "regex": ""
+            "regex": "",
+            "script": ""
         },
         "total_amount": {
             "element": "div:nth-of-type(1) > div > div > div > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(2) > span.a-color-secondary.value",
             "full_path": false,
             "attribute": "",
-            "regex": ""
+            "regex": "",
+            "script": ""
         },
         "delivery_status": {
             "element": "div:nth-of-type(2) > div > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > span.js-shipment-info.aok-hidden",
             "full_path": false,
             "attribute": "data-yoshortstatuscode",
-            "regex": ""
+            "regex": "",
+            "script": ""
         },
         "purchase_product": {
             "url_element": "",
@@ -34,31 +38,36 @@
                 "element": "div:nth-of-type(2) > div:nth-of-type(1) > a.a-link-normal",
                 "full_path": false,
                 "attribute": "href",
-                "regex": "\/gp\/product\/([A-Z0-9]+)\/"
+                "regex": "\/gp\/product\/([A-Z0-9]+)\/",
+                "script": ""
             },
             "product_name": {
                 "element": "div:nth-of-type(2) > div:nth-of-type(1) > a.a-link-normal",
                 "full_path": false,
                 "attribute": "",
-                "regex": ""
+                "regex": "",
+                "script": ""
             },
             "product_quantity": {
                 "element": "div:nth-of-type(1) > div > span.item-view-qty",
                 "full_path": false,
                 "attribute": "",
-                "regex": ""
+                "regex": "",
+                "script": ""
             },
             "unit_price": {
                 "element": "div:nth-of-type(2) > div:nth-of-type(4) > span.a-size-small.a-color-price",
                 "full_path": false,
                 "attribute": "",
-                "regex": ""
+                "regex": "",
+                "script": ""
             },
             "product_distributor": {
                 "element": "div:nth-of-type(2) > div:nth-of-type(2) > span.a-size-small.a-color-secondary",
                 "full_path": false,
                 "attribute": "",
-                "regex": ""
+                "regex": "",
+                "script": ""
             }
        }
     },

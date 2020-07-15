@@ -1,0 +1,39 @@
+{
+  "url": "https://item.rakuten.co.jp/{code}",
+  "product_details": [
+    [
+      {
+        "item": "unit_price",
+        "selector": ".price2",
+        "attribute": "",
+        "regex": "",
+        "script": ""
+      }
+    ],
+    [
+      {
+        "item": "product_name",
+        "selector": ".item_name",
+        "attribute": "",
+        "regex": "",
+        "script": ""
+      }
+    ],
+    [
+      {
+        "item": "jan_code",
+        "selector": ".item_number",
+        "attribute": "",
+        "regex": "[0-9]{13}",
+        "script": ""
+      },
+      {
+        "item": "model_no",
+        "selector": ".item_number",
+        "attribute": "",
+        "regex": "[\\p{ASCII}]+",
+        "script": ""
+      }
+    ]
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "url": "https://store.shopping.yahoo.co.jp/{code}",
+  "product_details": [
+    [
+      {
+        "item": "product_code",
+        "selector": "head > link[rel='canonical']",
+        "attribute": "href",
+        "regex": "https:\\/\\/.*?\\/(.*)\\.html",
+        "script": ""
+      }
+    ],
+    [
+      {
+        "item": "product_name",
+        "selector": ".mdItemInfoTitle > h2",
+        "attribute": "",
+        "regex": "",
+        "script": ""
+      }
+    ],
+    [
+      {
+        "item": "product_distributor",
+        "selector": "dt.elStore > a",
+        "attribute": "",
+        "regex": "",
+        "script": ""
+      }
+    ],
+    [
+      {
+        "item": "unit_price",
+        "selector": ".elNum",
+        "attribute": "",
+        "regex": "",
+        "script": ""
+      },
+      {
+        "item": "unit_price",
+        "selector": ".ItemPrice_price",
+        "attribute": "",
+        "regex": "",
+        "script": ""
+      },
+      {
+        "item": "unit_price",
+        "selector": "p.elPrice:nth-child(2) > em",
+        "attribute": "",
+        "regex": "",
+        "script": ""
+      }
+    ],
+    [
+      {
+        "item": "jan_code",
+        "selector": ".mdItemInfoCode > p",
+        "attribute": "",
+        "regex": "[0-9]{13}",
+        "script": ""
+      }
+    ]
+  ]
+}
