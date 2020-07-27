@@ -2,8 +2,8 @@
   "url": "https://shopping.yahoo.co.jp/search?p={word}",
   "group_selector": "html > body > div > div > div > main > div:nth-of-type(7) > div:nth-of-type(1) > div:nth-of-type(5) > ul > li > div > ul > li",
   "selector": "div > div:nth-of-type(2) > p > a",
-  "attribute": "href",
-  "regex": "item.rakuten.co.jp%2F(.+?%2F.+?)%2F",
+  "attribute": "data-ylk",
+  "regex": "tar_uri:\\/(.+?\\/.+?)\\.html",
   "script": "",
   "excluded_selector": ""
 }
