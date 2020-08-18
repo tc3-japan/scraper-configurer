@@ -4,6 +4,7 @@
   "selector": "div:nth-of-type(2) > h2 > a",
   "attribute": "href",
   "regex": "store.shopping.yahoo.co.jp\\/(.+?\\/.+?).html",
+  "is_script": false,
   "script": "",
   "excluded_selector": ""
 }

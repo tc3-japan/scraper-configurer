@@ -8,6 +8,7 @@
             "full_path": false,
             "attribute": "",
             "regex": "",
+            "is_script": false,
             "script": ""
         },
         "order_date": {
@@ -15,6 +16,7 @@
             "full_path": false,
             "attribute": "",
             "regex": "",
+            "is_script": false,
             "script": ""
         },
         "purchase_product": {
@@ -25,6 +27,7 @@
                 "full_path": true,
                 "attribute": "",
                 "regex": "",
+                "is_script": false,
                 "script": ""
             },
             "product_code": {
@@ -32,6 +35,7 @@
                 "full_path": false,
                 "attribute": "href",
                 "regex": ".+item.rakuten.co.jp/([^/]+/[^/]+)/.*",
+                "is_script": false,
                 "script": ""
             },
             "product_name": {
@@ -39,6 +43,7 @@
                 "full_path": false,
                 "attribute": "",
                 "regex": "",
+                "is_script": false,
                 "script": ""
             },
             "product_quantity": {
@@ -46,6 +51,7 @@
                 "full_path": false,
                 "attribute": "",
                 "regex": "",
+                "is_script": false,
                 "script": ""
             },
             "unit_price": {
@@ -53,6 +59,7 @@
                 "full_path": false,
                 "attribute": "",
                 "regex": "",
+                "is_script": false,
                 "script": ""
             },
             "product_distributor": {
@@ -60,6 +67,7 @@
                 "full_path": true,
                 "attribute": "",
                 "regex": "",
+                "is_script": false,
                 "script": ""
             }
        }

@@ -4,6 +4,7 @@
   "selector": "div > div:nth-of-type(2) > p > a",
   "attribute": "data-ylk",
   "regex": "tar_uri:\\/(.+?\\/.+?)\\.html",
+  "is_script": false,
   "script": "",
   "excluded_selector": ""
 }

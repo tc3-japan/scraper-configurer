@@ -8,6 +8,7 @@
             "full_path": false,
             "attribute": "",
             "regex": "",
+            "is_script": false,
             "script": ""
         },
         "order_date": {
@@ -15,6 +16,7 @@
             "full_path": false,
             "attribute": "",
             "regex": "",
+            "is_script": false,
             "script": ""
         },
         "total_amount": {
@@ -22,6 +24,7 @@
             "full_path": false,
             "attribute": "",
             "regex": "",
+            "is_script": false,
             "script": ""
         },
         "delivery_status": {
@@ -29,6 +32,7 @@
             "full_path": false,
             "attribute": "data-yoshortstatuscode",
             "regex": "",
+            "is_script": false,
             "script": ""
         },
         "purchase_product": {
@@ -39,6 +43,7 @@
                 "full_path": false,
                 "attribute": "href",
                 "regex": "\/gp\/product\/([A-Z0-9]+)\/",
+                "is_script": false,
                 "script": ""
             },
             "product_name": {
@@ -46,6 +51,7 @@
                 "full_path": false,
                 "attribute": "",
                 "regex": "",
+                "is_script": false,
                 "script": ""
             },
             "product_quantity": {
@@ -53,6 +59,7 @@
                 "full_path": false,
                 "attribute": "",
                 "regex": "",
+                "is_script": false,
                 "script": ""
             },
             "unit_price": {
@@ -60,6 +67,7 @@
                 "full_path": false,
                 "attribute": "",
                 "regex": "",
+                "is_script": false,
                 "script": ""
             },
             "product_distributor": {
@@ -67,6 +75,7 @@
                 "full_path": false,
                 "attribute": "",
                 "regex": "",
+                "is_script": false,
                 "script": ""
             }
        }

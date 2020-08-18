@@ -7,6 +7,7 @@
         "selector": "#priceblock_ourprice",
         "attribute": "",
         "regex": "",
+        "is_script": false,
         "script": ""
       },
       {
@@ -14,6 +15,7 @@
         "selector": "#MediaMatrix > div > div > ul > li.selected > span > span.a-button-selected > span > a > span > span.a-color-price",
         "attribute": "",
         "regex": "",
+        "is_script": false,
         "script": ""
       }
     ],
@@ -23,6 +25,7 @@
         "selector": "#productTitle",
         "attribute": "",
         "regex": "",
+        "is_script": false,
         "script": ""
       }
     ],
@@ -36,6 +39,7 @@
         "label_value": "メーカー型番",
         "label_attribute": "",
         "label_regex": "",
+        "is_script": false,
         "script": ""
       },
       {
@@ -47,6 +51,7 @@
         "label_value": "メーカー型番",
         "label_attribute": "",
         "label_regex": "",
+        "is_script": false,
         "script": ""
       },
       {
@@ -58,6 +63,7 @@
         "label_value": "メーカー型番",
         "label_attribute": "",
         "label_regex": "",
+        "is_script": false,
         "script": ""
       }
     ]

@@ -8,6 +8,7 @@
             "full_path": false,
             "attribute": "",
             "regex": "",
+            "is_script": false,
             "script": ""
         },
         "order_date": {
@@ -15,6 +16,7 @@
             "full_path": false,
             "attribute": "",
             "regex": "",
+            "is_script": false,
             "script": ""
         },
         "purchase_product": {
@@ -25,6 +27,7 @@
                 "full_path": true,
                 "attribute": "",
                 "regex": "",
+                "is_script": false,
                 "script": ""
             },
             "product_code": {
@@ -32,13 +35,15 @@
                 "full_path": false,
                 "attribute": "href",
                 "regex": "https:\/\/.*pagekey=(.*)",
-                "script": ""
+                "is_script": true,
+                "script": "document.querySelector(\"input[type=hidden][name=h_sid]\").value + \"/\" + \ndocument.querySelector(\"#orddtl > div.elItem > ul > li:nth-child({productIndex}) > div > ul > li:nth-child(2) > p > a\").getAttribute(\"href\").match(\"https://.*pagekey=(.*)\")[1];"
             },
             "product_name": {
                 "element": "div > dl > dd:nth-of-type(1) > a > span",
                 "full_path": false,
                 "attribute": "",
                 "regex": "",
+                "is_script": false,
                 "script": ""
             },
             "product_quantity": {
@@ -46,6 +51,7 @@
                 "full_path": false,
                 "attribute": "",
                 "regex": "",
+                "is_script": false,
                 "script": ""
             },
             "unit_price": {
@@ -53,6 +59,7 @@
                 "full_path": false,
                 "attribute": "",
                 "regex": "",
+                "is_script": false,
                 "script": ""
             },
             "product_distributor": {
@@ -60,6 +67,7 @@
                 "full_path": true,
                 "attribute": "",
                 "regex": "",
+                "is_script": false,
                 "script": ""
             }
        }

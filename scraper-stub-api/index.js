@@ -179,7 +179,7 @@ app.post('/scrapers/:site/:type/test', (req, res) => {
 		data: data
 	}
 
-	res.json(body);
+	res.json(data);
 });
 
 app.get('/scrapers/html/:site/:file', (req, res) => {
